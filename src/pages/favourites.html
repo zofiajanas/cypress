@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cypress - szkolenie</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="../index.html"> Home </a>
+            </li>
+            <li>
+              <a href="./search.html"> Search </a>
+            </li>
+            <li>
+              <a href="./favourites.html"> Favourites </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p class="no-results">There is no results</p>
+        <ul class="character-list">
+          <template class="character-item">
+            <li>
+              <img class="character-item__photo" />
+              <h2 class="character-item__name"></h2>
+              <button>❌</button>
+            </li>
+          </template>
+        </ul>
+      </main>
+
+      <div class="loader">
+        <div class="lds-facebook">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/menu.js" type="module"></script>
+    <script src="../js/favourites.js" type="module"></script>
+  </body>
+</html>

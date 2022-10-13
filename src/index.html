@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cypress - szkolenie</title>
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <button class="login-modal-button">log in</button>
+        <nav>
+          <ul>
+            <li>
+              <a href="/"> Home </a>
+            </li>
+            <li>
+              <a href="./pages/search.html"> Search </a>
+            </li>
+            <li>
+              <a href="./pages/favourites.html"> Favourites </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <form class="login-form form">
+          <label for="login">
+            <p>login</p>
+            <input id="login" placeholder="login" class="login-input" />
+            <span class="error login-error">Login is require</span>
+          </label>
+          <label for="password">
+            <p>password</p>
+            <input id="password" placeholder="password" class="password-input" />
+            <span class="error password-error">Password is require</span>
+          </label>
+
+          <button>Log in</button>
+          <span class="error form-error"></span>
+        </form>
+      </main>
+    </div>
+    <div class="loader">
+      <div class="lds-facebook">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="./js/menu.js" type="module"></script>
+    <script src="./js/login.js" type="module"></script>
+  </body>
+</html>
