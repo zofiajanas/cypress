@@ -48,7 +48,7 @@ const dummyUser = {
   password: 'pass',
 };
 
-const submitForm = async e => {
+const submitForm = async (e) => {
   e.preventDefault();
 
   const isValid = validation();
@@ -61,11 +61,7 @@ const submitForm = async e => {
     await backendLogin(login, password);
 
     // redirect
-    window.location.href = '/pages/favourites.html';
-
-    // display sth
-    // formError.classList.add(VISIBLE);
-    // formError.textContent = 'you rocked!';
+    window.location.href = '/pages/favorites.html';
   } catch (e) {
     console.log(e);
     formError.textContent = e;

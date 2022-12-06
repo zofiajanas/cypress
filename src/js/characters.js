@@ -1,29 +1,29 @@
-import { displayAllFavourites } from './favourites';
+import { displayAllFavorites } from './favorites';
 import { showMessage, storageName } from './utils';
 
-const addToFavourites = id => {
+const addToFavorites = (id) => {
   const charactersId = localStorage.getItem(storageName)
     ? `${localStorage.getItem(storageName)},`
     : '';
 
-  // if (charactersId.includes(id)) return showMessage('This character is already in the favourites!');
+  // if (charactersId.includes(id)) return showMessage('This character is already in the favorites!');
 
   localStorage.setItem(storageName, charactersId + id);
 
   showMessage('Great!');
 };
 
-const removeFromFavourites = id => {
+const removeFromFavorites = (id) => {
   const charactersId = localStorage.getItem(storageName);
   const charactersArray = charactersId.split(',');
-  const newCharacters = charactersArray.filter(el => +el !== +id).join(',');
+  const newCharacters = charactersArray.filter((el) => +el !== +id).join(',');
   localStorage.setItem(storageName, newCharacters);
 
   showMessage('So sad');
 
   // 1.
-  // document.querySelector('.character-list').innerHTML = '';
-  // displayAllFavourites();
+  // document.querySelector(".character-list").innerHTML = "";
+  // displayAllFavorites();
 
   // 2.
   // const liElement = document.querySelector(`.character-list li[data-id="${id}"]`);
@@ -41,8 +41,13 @@ export const createSingleCharacter = async (data, isFav) => {
   clon.querySelector('.character-item__name').textContent = data.name;
 
   if (isFav)
-    clon.querySelector('button').addEventListener('click', () => removeFromFavourites(data._id));
-  else clon.querySelector('button').addEventListener('click', () => addToFavourites(data._id));
+    clon
+      .querySelector('button')
+      .addEventListener('click', () => removeFromFavorites(data._id));
+  else
+    clon
+      .querySelector('button')
+      .addEventListener('click', () => addToFavorites(data._id));
 
   characterList.appendChild(clon);
 };
